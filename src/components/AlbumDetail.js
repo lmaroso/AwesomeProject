@@ -1,9 +1,8 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image, Linking, TouchableOpacity } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
-import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
     const { title, artist, thumbnail_image, image, url } = album;
@@ -32,16 +31,12 @@ const AlbumDetail = ({ album }) => {
             </CardSection>
 
             <CardSection>
-                <Image 
-                    style={imageStyle}
-                    source={{ uri: image }} 
-                />
-            </CardSection>
-
-            <CardSection>
-                <Button onPress={() => Linking.openURL(url)}>
-                    Buy Now
-                </Button>
+                <TouchableOpacity onPress={() => Linking.openURL(url)}>
+                    <Image 
+                        style={imageStyle}
+                        source={{ uri: image }} 
+                    />
+                </TouchableOpacity>
             </CardSection>
         </Card>
     );
@@ -68,9 +63,8 @@ const styles = {
     imageStyle: {
         height: 300,
         flex: 1,
-        width: null
+        width: 300
     }
 };
 
 export default AlbumDetail;
-//TEST
