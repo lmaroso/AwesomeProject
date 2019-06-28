@@ -2,10 +2,12 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const CardSection = (props) => {
+const CardSection = ({ center, children }) => {
+    const { containerStyle, alternativeContainerStyle } = styles;
+
     return (
-        <View style={styles.containerStyle}>
-            {props.children}
+        <View style={[containerStyle, center && alternativeContainerStyle]}>
+            {children}
         </View>
     );
 };
@@ -19,6 +21,9 @@ const styles = {
         flexDirection: 'row',
         borderColor: '#ddd',
         position: 'relative'
+    },
+    alternativeContainerStyle: {
+        justifyContent: 'center'
     }
 };
 

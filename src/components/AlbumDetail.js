@@ -11,7 +11,7 @@ const AlbumDetail = ({ album }) => {
         headerContentStyle,
         thumbnailContainerStyle,
         headerTextStyle,
-        imageStyle
+        imageStyle,
     } = styles;
 
 
@@ -30,7 +30,7 @@ const AlbumDetail = ({ album }) => {
                 </View>
             </CardSection>
 
-            <CardSection>
+            <CardSection center>
                 <TouchableOpacity onPress={() => Linking.openURL(url)}>
                     <Image 
                         style={imageStyle}
