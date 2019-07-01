@@ -42,7 +42,7 @@ const AlbumDetail = ({ album }) => {
     );
 };
 
-const styles = {
+const styles = { 
     headerContentStyle: {
         flexDirection: 'column',
         justifyContent: 'space-around'
